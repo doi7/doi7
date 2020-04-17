@@ -24,9 +24,7 @@
   },
   "include": [
     "packages/@do-it/*/src/**/*",
-    "packages/@do-it/*/types/**/*",
-    "packages/@do-it/service/weback.config.js",
-    "packages/@do-it/migrator/types/MigratorPlugin.d.ts",
+    "packages/@do-it/*/types/**/*"
   ],
   "exclude": [
     "node_modules"
