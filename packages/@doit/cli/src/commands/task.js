@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const execa = require('execa')
 const deepmerge = require('deepmerge')
-const { sequence, isFunction } = require('@doit/utils')
+const { sequence, isFunction } = require('@do-it/utils')
 
 const defaultConfig = {
   liftoff: {

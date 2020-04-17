@@ -1,11 +1,11 @@
 {
-  "name": "@doit/utils",
+  "name": "@do-it/utils",
   "description": "DoIt utils",
   "author": "Antério Vieira <anteriovieira@gmail.com>",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/anteriovieira/doit.git",
-    "directory": "@doit/utils"
+    "directory": "@do-it/utils"
   },
   "version": "1.7.0-alpha.4",
   "main": "src/index.js",

@@ -1,6 +1,6 @@
 const execa = require('execa')
 const deepmerge = require('deepmerge')
-const { logger } = require('@doit/utils')
+const { logger } = require('@do-it/utils')
 const chalk = require('chalk')
 
 const envConfig = {

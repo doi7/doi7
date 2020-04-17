@@ -1,12 +1,12 @@
 {
-  "name": "@doit/cli",
+  "name": "@do-it/cli",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/anteriovieira/doit.git",
-    "directory": "@doit/cli"
+    "directory": "@do-it/cli"
   },
   "author": {
     "name": "Antério Vieira da Silva",
@@ -19,7 +19,7 @@
     "doit": "src/bin/doit.js"
   },
   "dependencies": {
-    "@doit/utils": "^1.7.0-alpha.4",
+    "@do-it/utils": "^1.7.0-alpha.4",
     "chalk": "^3.0.0",
     "cliui": "^6.0.0",
     "cmd-shim": "^3.0.3",
