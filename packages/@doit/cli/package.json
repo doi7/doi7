@@ -1,0 +1,44 @@
+{
+  "name": "@doit/cli",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/anteriovieira/doit.git",
+    "directory": "@doit/cli"
+  },
+  "author": {
+    "name": "Antério Vieira da Silva",
+    "email": "anteriovieira@gmail.com"
+  },
+  "engines": {
+    "node": ">=8.12"
+  },
+  "bin": {
+    "doit": "src/bin/doit.js"
+  },
+  "dependencies": {
+    "@doit/utils": "^1.7.0-alpha.4",
+    "chalk": "^3.0.0",
+    "cliui": "^6.0.0",
+    "cmd-shim": "^3.0.3",
+    "commander": "^4.0.1",
+    "deepmerge": "^4.2.2",
+    "download-git-repo": "^3.0.2",
+    "execa": "^3.4.0",
+    "extra": "^0.2.1",
+    "favicons": "^5.5.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^7.0.0",
+    "interpret": "^2.0.0",
+    "liftoff": "^3.1.0",
+    "lodash.clonedeep": "^4.5.0",
+    "minimist": "^1.2.5",
+    "node-notifier": "^6.0.0",
+    "ora": "^4.0.3",
+    "semver": "^6.3.0",
+    "table": "^5.4.6",
+    "v8flags": "^3.1.3"
+  }
+}
