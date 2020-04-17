@@ -5,8 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/anteriovieira/doit.git",
-    "directory": "@do-it/cli"
+    "url": "ssh://git@github.com/anteriovieira/doit.git"
   },
   "author": {
     "name": "Antério Vieira da Silva",
@@ -19,7 +18,7 @@
     "doit": "src/bin/doit.js"
   },
   "dependencies": {
-    "@do-it/utils": "^1.7.0-alpha.4",
+    "@do-it/utils": "^0.0.1",
     "chalk": "^3.0.0",
     "cliui": "^6.0.0",
     "cmd-shim": "^3.0.3",
