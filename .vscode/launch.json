@@ -12,7 +12,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}",
       "args": ["release", "-cp"]
     },
@@ -24,7 +24,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["release", "-D", "container"]
     },
@@ -36,7 +36,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["favicons", "-s", "icon.png"]
     },
@@ -48,7 +48,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["launch", "-bpcRD"]
     },
@@ -60,7 +60,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["launch", "--cron", "--from", "repository", "--bash"]
     },
@@ -72,7 +72,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["launch", "-p", "-D"]
     },
@@ -84,7 +84,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["liftoff", "-e", "-c", "-p", "development"]
     },
@@ -96,7 +96,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["liftoff", "command", "-a", "-b"]
     },
@@ -108,7 +108,7 @@
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@doit/cli/src/bin/doit.js",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
       "args": ["liftoff", "-x", "-p", "-c", "-e"]
     }
