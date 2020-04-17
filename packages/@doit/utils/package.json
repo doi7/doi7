@@ -7,7 +7,7 @@
     "url": "ssh://git@github.com/anteriovieira/doit.git",
     "directory": "@do-it/utils"
   },
-  "version": "1.7.0-alpha.4",
+  "version": "0.0.1",
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
