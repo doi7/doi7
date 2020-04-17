@@ -23,10 +23,8 @@
     "strictNullChecks": false,
   },
   "include": [
-    "packages/@doit/*/src/**/*",
-    "packages/@doit/*/types/**/*",
-    "packages/@doit/service/weback.config.js",
-    "packages/@doit/migrator/types/MigratorPlugin.d.ts",
+    "packages/@do-it/*/src/**/*",
+    "packages/@do-it/*/types/**/*"
   ],
   "exclude": [
     "node_modules"

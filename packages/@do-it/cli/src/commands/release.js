@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const semver = require('semver')
 const inquirer = require('inquirer')
 const deepmerge = require('deepmerge')
-const { notify, PackageManager, genChangelog, sequence } = require('@doit/utils')
+const { notify, PackageManager, genChangelog, sequence } = require('@do-it/utils')
 
 const defaultConfig = {
   release: {

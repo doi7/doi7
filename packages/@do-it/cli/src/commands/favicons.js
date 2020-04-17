@@ -3,7 +3,7 @@ const deepmerge = require('deepmerge')
 const path = require('path')
 const fs = require('fs')
 const ora = require('ora')
-const { notify } = require('@doit/utils')
+const { notify } = require('@do-it/utils')
 
 const defaultConfig = {
   configuration: {

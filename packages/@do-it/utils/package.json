@@ -1,13 +1,12 @@
 {
-  "name": "@doit/utils",
+  "name": "@do-it/utils",
   "description": "DoIt utils",
   "author": "Antério Vieira <anteriovieira@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/anteriovieira/doit.git",
-    "directory": "@doit/utils"
+    "url": "ssh://git@github.com/anteriovieira/doit.git"
   },
-  "version": "1.7.0-alpha.4",
+  "version": "0.1.3",
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
@@ -20,5 +19,6 @@
     "node-notifier": "^6.0.0",
     "readline": "^1.3.0",
     "string.prototype.padstart": "^3.0.0"
-  }
+  },
+  "gitHead": "110c2ab63c598b497c82e2632b357f3445f9c55b"
 }
