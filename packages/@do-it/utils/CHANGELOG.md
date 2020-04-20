@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/anteriovieira/doit/compare/v0.2.0...v0.2.1) (2020-04-20)
+
+
+### Bug Fixes
+
+* adds loadEnv from index file ([3470484](https://github.com/anteriovieira/doit/commit/3470484e1a347ed3fe157b489ed28cd89bd98961))
+
+
+
+
+
 # 0.2.0 (2020-04-20)
 
 
