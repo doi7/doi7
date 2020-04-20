@@ -1,15 +1,17 @@
+const fs = require('fs');
 const path = require('path')
 const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 
-module.exports = (mode, context = '.') => {
-  const basePath = path.resolve(context, `.env${mode ? `.${mode}` : ``}`)
-  const localPath = `${basePath}.local`
-
+module.exports = ({mode = null, context = '.', local = true}) => {
+  const basePath = path.resolve(context, '.env');
+  const localPath = `${basePath}.local`;
+  const modePath = `${basePath}.${mode}`;
+  
   const load = envPath => {
     try {
       const env = dotenv.config({
-        path: envPath
+        path: envPath, debug: !!process.env.DEBUG ? true : null
       })
 
       dotenvExpand(env)
@@ -21,6 +23,7 @@ module.exports = (mode, context = '.') => {
     }
   }
 
-  load(localPath)
-  load(basePath)
+  if (fs.existsSync(modePath)) load(modePath)
+  if (local && fs.existsSync(localPath)) load(localPath)
+  if (fs.existsSync(basePath)) load(basePath)
 }

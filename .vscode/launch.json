@@ -43,74 +43,44 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch",
+      "name": "Task",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
       "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
-      "args": ["launch", "-bpcRD"]
+      "args": ["task", "-e", "-c", "-p", "development"]
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch (allowUnknownOption)",
+      "name": "Task <task>",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
       "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
-      "args": ["launch", "--cron", "--from", "repository", "--bash"]
+      "args": ["task", "my-task", "-a", "-b"]
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch (Debug mode)",
+      "name": "Task (Unknown Options)",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "console": "integratedTerminal",
       "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
       "cwd": "${workspaceFolder}/packages/test",
-      "args": ["launch", "-p", "-D"]
+      "args": ["task", "-x", "-p", "-c", "-e"]
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Liftoff",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
-      "cwd": "${workspaceFolder}/packages/test",
-      "args": ["liftoff", "-e", "-c", "-p", "development"]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Liftoff <command>",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
-      "cwd": "${workspaceFolder}/packages/test",
-      "args": ["liftoff", "command", "-a", "-b"]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Unknown Options",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "console": "integratedTerminal",
-      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
-      "cwd": "${workspaceFolder}/packages/test",
-      "args": ["liftoff", "-x", "-p", "-c", "-e"]
+      "name": "Load env",
+      "program": "${workspaceFolder}/packages/test/load-env.js"
     }
   ]
 }

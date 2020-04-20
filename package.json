@@ -24,7 +24,6 @@
     "semver": "^6.3.0"
   },
   "dependencies": {
-    "@do-it/cli": "^0.0.1",
     "liftoff": "^3.1.0"
   },
   "version": "0.0.1"
