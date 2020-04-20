@@ -1,6 +1,6 @@
 {
   "name": "@do-it/cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "index.js",
   "license": "MIT",
   "repository": {
@@ -18,7 +18,7 @@
     "doit": "src/bin/doit.js"
   },
   "dependencies": {
-    "@do-it/utils": "^0.2.2",
+    "@do-it/utils": "^0.2.3",
     "chalk": "^3.0.0",
     "cliui": "^6.0.0",
     "cmd-shim": "^3.0.3",
