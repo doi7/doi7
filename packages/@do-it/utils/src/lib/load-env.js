@@ -9,7 +9,7 @@ module.exports = (mode, context = '.') => {
   const load = envPath => {
     try {
       const env = dotenv.config({
-        path: envPath, debug: !!process.env.DEBUG
+        path: envPath
       })
 
       dotenvExpand(env)
