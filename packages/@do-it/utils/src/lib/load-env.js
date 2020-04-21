@@ -3,10 +3,10 @@ const path = require('path')
 const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 
-module.exports = ({mode = null, context = '.', local = true}) => {
+module.exports = ({mode = null, context = '.', local = true} = {}) => {
   const basePath = path.resolve(context, '.env')
   const localPath = `${basePath}.local`
-  const modePath = `${basePath}.${mode}`
+  const modePath = mode ? `${basePath}.${mode}` : mode
   const localModePath = `${modePath}.local`
   
   const load = envPath => {
@@ -27,7 +27,7 @@ module.exports = ({mode = null, context = '.', local = true}) => {
   }
 
   if (local) load(localModePath)
-  load(modePath)
+  if (modePath) load(modePath)
   if (local) load(localPath)
   load(basePath)
 }
