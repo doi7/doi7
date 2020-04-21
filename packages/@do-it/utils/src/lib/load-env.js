@@ -7,7 +7,7 @@ module.exports = ({mode = null, context = '.', local = true}) => {
   const basePath = path.resolve(context, '.env')
   const localPath = `${basePath}.local`
   const modePath = `${basePath}.${mode}`
-  const localModePath = `${basePath}.${mode}.local`
+  const localModePath = `${modePath}.local`
   
   const load = envPath => {
     try {
