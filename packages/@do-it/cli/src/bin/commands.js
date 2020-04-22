@@ -38,6 +38,7 @@ program
 
 program
   .command('task')
+  .alias('tasks')
   .allowUnknownOption()
   .description('Tasks')
   .action(cmd => loadCommand('task', cleanArgs(cmd)))
