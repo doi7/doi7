@@ -34,17 +34,10 @@ $ doit --help
 
 ##### Tasks
 
-```js
-
-module.exports = async () {
-  return {
-    // ... options
-  }
-}
-
-```
 
 ```js
+// doitfile.js
+
 // bash helper
 const bash = (cli, context = []) => new Proxy({}, {
   get: (_, command) => (...args) => [cli, [...context, command, ...args]]
@@ -66,4 +59,11 @@ module.expors = {
         ]
     }
 }
+```
+
+Usage:
+
+```bash
+# execute the tasks
+$ doit taks
 ```
