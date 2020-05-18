@@ -1,20 +1,29 @@
 const chalk = require('chalk')
 const execa = require('execa')
 const deepmerge = require('deepmerge')
+const inquirer = require('inquirer')
 const { sequence, isFunction } = require('@do-it/utils')
 
 const defaultConfig = {
-  tasks: {
-    commands: []
-  }
+  tasks: []
 }
 
 module.exports = async (params, config, env) => {
   const log = console.log
   const { tasks } = deepmerge(defaultConfig, config)
+  const choices = tasks.map((task, index) => ({ name: task.title, value: index}))
 
   try {
-    await sequence(tasks.commands, command =>
+    const { selectedTask } = await inquirer.prompt([
+      {
+        name: 'selectedTask',
+        message: 'Select a task',
+        type: 'list',
+        choices,
+      }
+    ])
+
+    await sequence(tasks[selectedTask].commands || [], command =>
       isFunction(command)
         ? command({ execa, params, config, env, output: { stdio: 'inherit' } })
         : execa.apply(execa, (command.push({ stdio: 'inherit' }), command))
