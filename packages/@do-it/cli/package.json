@@ -1,6 +1,6 @@
 {
   "name": "@do-it/cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "index.js",
   "license": "MIT",
   "repository": {
