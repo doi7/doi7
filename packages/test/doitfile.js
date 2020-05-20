@@ -3,6 +3,7 @@ const bash = (cli, context = []) => new Proxy({}, {
 })
 
 const git = bash('git')
+const echo = bash('echo')['']
 
 module.exports = {
   tasks: [
@@ -10,9 +11,14 @@ module.exports = {
       title: 'Show git status',
       key: 'my-task',
       commands: [
-        () => {
+        echo('--- start ---'),
+        async ({ execa }) => {
+          await execa('echo', ['awesome doitfile'], { stdio: 'inherit' })
+          await execa.apply(execa, [...echo('--- middle ---'), { stdio: 'inherit' } ])
+
           return git.status()
-        }
+        },
+        echo('--- end ---')
       ]
     }
   ]

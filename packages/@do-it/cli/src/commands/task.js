@@ -8,15 +8,6 @@ const defaultConfig = {
   tasks: []
 }
 
-function normalizeCommand ({ command, task, params, config, env, output }) {
-  const payload = command({ execa, inquirer, task, params, config, env, output })
-  const args = (payload.push(output), payload)
-
-  return Array.isArray(payload) 
-    ? execa.apply(execa, args) 
-    : payload
-}
-
 module.exports = async (params, config, env) => {
   let task
   const output = { stdio: 'inherit' }
@@ -39,11 +30,13 @@ module.exports = async (params, config, env) => {
       task = tasks.find(task => task.key === params.command)
     }
 
-    await sequence((task && task.commands) || [], command =>
-      isFunction(command)
-        ? normalizeCommand({ command, task, params, config, env, output })
-        : execa.apply(execa, (command.push(output), command))
-    )
+    await sequence((task && task.commands) || [], async command => {
+      const result = isFunction(command) 
+        ? await command({execa, inquirer, task, params, config, env, output })
+        : command
+
+      return execa.apply(execa, (result.push(output), result))
+    })
   } catch (err) {
     log()
     log(chalk.gray(`$ ${err.command}`))
