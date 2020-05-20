@@ -30,7 +30,7 @@ module.exports = async (params, config, env) => {
       task = tasks.find(task => task.key === params.command)
     }
 
-    log('\n', chalk.cyanBright(`🚀 ${task.title} 🚀`), '\n')
+    log('\n', chalk.cyanBright(task.title), '\n')
     await sequence((task && task.commands) || [], async command => {
       const result = isFunction(command) 
         ? await command({execa, inquirer, task, params, config, env, output })
