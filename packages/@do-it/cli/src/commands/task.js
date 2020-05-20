@@ -8,8 +8,18 @@ const defaultConfig = {
   tasks: []
 }
 
+function normalizeCommand ({ command, task, params, config, env, output }) {
+  const payload = command({ execa, inquirer, task, params, config, env, output })
+  const args = (payload.push(output), payload)
+
+  return Array.isArray(payload) 
+    ? execa.apply(execa, args) 
+    : payload
+}
+
 module.exports = async (params, config, env) => {
   let task
+  const output = { stdio: 'inherit' }
   const log = console.log
   const { tasks } = deepmerge(defaultConfig, config)
   const choices = tasks.map((task, index) => ({ name: task.title, value: index}))
@@ -31,8 +41,8 @@ module.exports = async (params, config, env) => {
 
     await sequence((task && task.commands) || [], command =>
       isFunction(command)
-        ? command({ execa, inquirer, task, params, config, env, output: { stdio: 'inherit' } })
-        : execa.apply(execa, (command.push({ stdio: 'inherit' }), command))
+        ? normalizeCommand({ command, task, params, config, env, output })
+        : execa.apply(execa, (command.push(output), command))
     )
   } catch (err) {
     log()
