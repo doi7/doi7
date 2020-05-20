@@ -9,21 +9,27 @@ const defaultConfig = {
 }
 
 module.exports = async (params, config, env) => {
+  let task
   const log = console.log
   const { tasks } = deepmerge(defaultConfig, config)
   const choices = tasks.map((task, index) => ({ name: task.title, value: index}))
-
+  
   try {
-    const { selectedTask } = await inquirer.prompt([
-      {
-        name: 'selectedTask',
-        message: 'Select a task',
-        type: 'list',
-        choices,
-      }
-    ])
-    const task = tasks[selectedTask]
-    await sequence(task.commands || [], command =>
+    if (!params.command) {
+      const { selectedTask } = await inquirer.prompt([
+        {
+          name: 'selectedTask',
+          message: 'Select a task',
+          type: 'list',
+          choices,
+        }
+      ])
+      task = tasks[selectedTask]
+    } else {
+      task = tasks.find(task => task.key === params.command)
+    }
+
+    await sequence((task && task.commands) || [], command =>
       isFunction(command)
         ? command({ execa, inquirer, task, params, config, env, output: { stdio: 'inherit' } })
         : execa.apply(execa, (command.push({ stdio: 'inherit' }), command))
