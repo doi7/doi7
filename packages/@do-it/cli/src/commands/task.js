@@ -22,10 +22,10 @@ module.exports = async (params, config, env) => {
         choices,
       }
     ])
-
-    await sequence(tasks[selectedTask].commands || [], command =>
+    const task = tasks[selectedTask]
+    await sequence(task.commands || [], command =>
       isFunction(command)
-        ? command({ execa, params, config, env, output: { stdio: 'inherit' } })
+        ? command({ execa, inquirer, task, params, config, env, output: { stdio: 'inherit' } })
         : execa.apply(execa, (command.push({ stdio: 'inherit' }), command))
     )
   } catch (err) {
