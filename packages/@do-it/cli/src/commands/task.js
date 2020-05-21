@@ -39,9 +39,7 @@ module.exports = async (params, config, env) => {
       return execa.apply(execa, (result.push(output), result))
     })
   } catch (err) {
-    log()
-    log(chalk.gray(`$ ${err.command}`))
-    log()
-    log(chalk.red(err.message))
+    log('\n', chalk.gray(`$ ${err.command}`))
+    log('\n', chalk.red(err.message))
   }
 }
