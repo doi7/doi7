@@ -1,12 +1,11 @@
-const execa = require('execa')
 const fs = require('fs')
 const cc = require('conventional-changelog')
-const custom = require('@anteriovieira/conventional-changelog')
+const config = require('@anteriovieira/conventional-changelog')
 
 function genNewRelease (version) {
   return new Promise(resolve => {
     const newReleaseStream = cc({
-      config: custom,
+      config,
       releaseCount: 2,
       pkg: {
         transform (pkg) {
