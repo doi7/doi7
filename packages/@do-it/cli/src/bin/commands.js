@@ -41,6 +41,7 @@ program
   .alias('tasks')
   .allowUnknownOption()
   .description('Tasks')
+  .option('-v, --verbose', 'show the output of command processing')
   .action(cmd => loadCommand('task', cleanArgs(cmd)))
 
 program.commands.forEach(c => c.on('--help', () => console.log()))

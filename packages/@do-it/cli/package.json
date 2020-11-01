@@ -33,6 +33,7 @@
     "interpret": "^2.0.0",
     "liftoff": "^3.1.0",
     "lodash.clonedeep": "^4.5.0",
+    "lodash.flattendepth": "^4.7.0",
     "minimist": "^1.2.5",
     "node-notifier": "^6.0.0",
     "ora": "^4.0.3",
