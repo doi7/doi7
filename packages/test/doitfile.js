@@ -20,6 +20,10 @@ module.exports = {
         },
         echo('--- end ---')
       ]
+    },
+    {
+      key: 'mist',
+      commands: [echo('hello word'), git.remote(), git.branch()]
     }
   ]
 }
