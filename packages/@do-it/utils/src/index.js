@@ -1,4 +1,4 @@
-const helpers = require('./lib/notify')
+const helpers = require('./lib/helpers')
 const isFunction = val => typeof val === 'function'
 
 module.exports = {
