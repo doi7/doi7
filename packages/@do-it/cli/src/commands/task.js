@@ -14,7 +14,9 @@ module.exports = async (params, config, env) => {
   const output = { stdio: 'inherit' }
   const log = console.log
   const { tasks } = deepmerge(defaultConfig, config)
-  const choices = tasks.map((task, index) => ({ name: task.title, value: index}))
+  const choices = tasks.map((task, index) => ({
+    name: task.title, value: index, disabled: task.disabled
+  }))
 
   try {
     if (!params.command) {
