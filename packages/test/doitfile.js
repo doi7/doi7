@@ -1,9 +1,8 @@
-const bash = (cli, context = []) => new Proxy({}, {
-  get: (_, command) => (...args) => [cli, [...context, command, ...args]]
-})
+const { useBash } = require('../@do-it/utils')
 
-const git = bash('git')
-const echo = bash('echo')['']
+const git = useBash('git')
+const npx = useBash('npx')
+const echo = useBash('echo')['']
 
 module.exports = {
   tasks: [
@@ -23,7 +22,13 @@ module.exports = {
     },
     {
       key: 'mist',
+      title: 'Mist',
       commands: [echo('hello word'), git.remote(), git.branch()]
+    },
+    {
+      key: 'serve',
+      title: 'Lite Serve',
+      commands: [npx.liteServer('--baseDir', '.')]
     }
   ]
 }
