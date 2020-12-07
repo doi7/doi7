@@ -12,11 +12,11 @@ $ yarn add @do-it/cli
 
 #### Usage
 
-Create the `doitfile.js``
+Create the `doitfile.js`
 
 ```js
 // Return Object or Function
-module.exports = async () {
+module.exports = ({ params }) => {
   return {
     // ... options
   }
@@ -43,27 +43,30 @@ const bash = (cli, context = []) => new Proxy({}, {
   get: (_, command) => (...args) => [cli, [...context, command, ...args]]
 })
 
-const dockerCompose = bash('docker-compose',  [
-  '-f', '../laradock/docker-compose.yml',
-  '--project-directory', '../laradock'
-])
 const git = bash('git', ['-C', '../app'])
 
 module.expors = {
-    taks: {
+    tasks: [
+      {
+        key: 'wip'
+        title: 'Send work in progress',
         commands: [
-            // start project
-            dockerCompose.up('-d', 'nginx', 'postgres', 'workspace'),
-            // access workspace
-            dockerCompose.exec('workspace', 'bash', '-c', 'cd runclub-app'),
+          git.status(),
+          git.add(),
+          git.commit('chore: updates'),
+          git.push()
         ]
-    }
+      }
+    ]
 }
 ```
 
 Usage:
 
 ```bash
-# execute the tasks
-$ doit taks
+# Choose a task
+$ doit task 
+
+# or just exec the task
+$ doit task wip
 ```
