@@ -45,7 +45,7 @@ const useBash = (cli, context = []) => new Proxy({}, {
   get: (_, command) => (...args) => [cli, [...context, command, ...args]]
 })
 
-const git = useBash('git', ['-C', '../app'])
+const git = useBash('git')
 
 module.expors = {
     tasks: [
