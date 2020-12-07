@@ -34,16 +34,18 @@ $ doit --help
 
 ##### Tasks
 
+The commands are executed by [execa](https://www.npmjs.com/package/execa).
+
 
 ```js
 // doitfile.js
 
 // bash helper
-const bash = (cli, context = []) => new Proxy({}, {
+const useBash = (cli, context = []) => new Proxy({}, {
   get: (_, command) => (...args) => [cli, [...context, command, ...args]]
 })
 
-const git = bash('git', ['-C', '../app'])
+const git = useBash('git', ['-C', '../app'])
 
 module.expors = {
     tasks: [
@@ -51,7 +53,7 @@ module.expors = {
         key: 'wip'
         title: 'Send work in progress',
         commands: [
-          git.status(),
+          git.status(), // ['git', ['status']]
           git.add(),
           git.commit('chore: updates'),
           git.push()
