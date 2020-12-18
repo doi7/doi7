@@ -37,9 +37,9 @@ module.exports = async (params, config, env) => {
     log('\n', chalk.cyanBright(task.title || 'Task'))
 
     await sequence((task && task.commands) || [], async command => {
-      const result = isFunction(command) 
-        ? await command({execa, inquirer, task, params, config, env, output })
-        : command
+      const result = (isFunction(command) 
+        ? await command({ execa, inquirer, task, params, config, env, output })
+        : command) || []
 
       if (params.verbose) {
         log('\n', chalk.gray(`$ ${flattenDepth(result).join(' ')}`), '\n')
