@@ -3,7 +3,7 @@ const execa = require('execa')
 const deepmerge = require('deepmerge')
 const inquirer = require('inquirer')
 const flattenDepth = require('lodash.flattendepth')
-const { sequence, isFunction } = require('@do-it/utils')
+const { sequence, isFunction, isString } = require('@do-it/utils')
 
 const defaultConfig = {
   tasks: []
@@ -37,15 +37,25 @@ module.exports = async (params, config, env) => {
     log('\n', chalk.cyanBright(task.title || 'Task'))
 
     await sequence((task && task.commands) || [], async command => {
-      const result = (isFunction(command) 
+      let terms = (isFunction(command) 
         ? await command({ execa, inquirer, task, params, config, env, output })
         : command) || []
 
-      if (params.verbose) {
-        log('\n', chalk.gray(`$ ${flattenDepth(result).join(' ')}`), '\n')
+      if (isString(terms)) {
+        terms = terms.split('&&').filter(v => !!v)
+        terms = terms.map(term => {
+          const line = term.match(/(['"].*?"|[^'"\s]+)+(?=\s*|\s*$)/g).filter(v => !!v)
+          const [arg0, ...args] = line
+
+          return [arg0, args]
+        }).reduce((a, t) => ([...a, ...t]), [])
       }
 
-      return execa.apply(execa, (result.push(output), result))
+      if (params.verbose) {
+        log('\n', chalk.gray(`$ ${flattenDepth(terms).join(' ')}`), '\n')
+      }
+
+      return execa.apply(execa, (terms.push(output), terms))
     })
   } catch (err) {
     log('\n', chalk.gray(`$ ${err.command}`))

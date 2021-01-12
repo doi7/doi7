@@ -29,6 +29,14 @@ module.exports = {
       key: 'serve',
       title: 'Lite Serve',
       commands: [npx.liteServer('--baseDir', '.')]
+    },
+    {
+      key: 'string',
+      title: 'String commands',
+      commands: [
+        'echo "is a string command"',
+        'pwd'
+      ]
     }
   ]
 }
