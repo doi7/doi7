@@ -35,9 +35,32 @@ $ doit --help
 
 or you can run using the command npx: `npx doit task`.
 
-##### Example
+### API
 
-##### Tasks
+#### Tasks
+
+- `key`: allows you to run the task from the command line.
+   `doit task <key>`
+- `title`: task title, it will be visible in the task list.
+   `doit task`
+- `commands`: list of commands to be executed in sequence.
+   `[Function, Array, String]`
+
+You can run parallel commands using functions like a command.
+
+```
+[
+  async ({ execa }) => {
+    const commands = [execa(...), execa(...), ...]
+  
+    await Promise.all(commands)
+  }
+]
+```
+
+### Example
+
+#### Tasks
 
 The commands are executed by [execa](https://www.npmjs.com/package/execa).
 
