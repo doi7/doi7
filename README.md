@@ -1,8 +1,10 @@
-# DoIt Cli
+# DoIt cli
 
+- Automates tasks;
 - Generates favicons;
 - Generates changelog;
-- Automates tasks;
+
+DoIt cli is a task automation tool, it allows you to use the power of the java script to perform repetitive tasks asks in your workflow. It is still a work in progress, so we will still have many improvements.
 
 #### Install
 
@@ -12,13 +14,12 @@ $ yarn add @do-it/cli
 
 #### Usage
 
-Create the `doitfile.js`
+Create a `doitfile.js` or `doitfile.json`.
 
 ```js
-// Return Object or Function
 module.exports = ({ params }) => {
   return {
-    // ... options
+    tasks: [...]
   }
 }
 
@@ -30,12 +31,13 @@ The cli
 $ doit --help
 ```
 
+or you can run using the command npx: `npx doit task`.
+
 ##### Example
 
 ##### Tasks
 
 The commands are executed by [execa](https://www.npmjs.com/package/execa).
-
 
 ```js
 // doitfile.js
@@ -47,20 +49,27 @@ const useBash = (cli, context = []) => new Proxy({}, {
 
 const git = useBash('git')
 
-module.expors = {
+module.expors = ({ params }) => ({
     tasks: [
       {
         key: 'wip'
-        title: 'Send work in progress',
+        title: '📋 Send work in progress',
         commands: [
-          git.status(), // ['git', ['status']]
-          git.add(),
-          git.commit('chore: updates'),
-          git.push()
+          git.status(),                       // useBash
+          ['echo', [':: commit ::']],         // array 
+          'git add .',                        // string
+          () => git.commit(`chore: ${params.m || 'updates'}`), // function
+          async ({ execa }) => {
+             // do something
+             await execa(...git.push())
+          }
         ]
+      },
+      {
+        ...
       }
     ]
-}
+})
 ```
 
 Usage:
