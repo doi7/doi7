@@ -68,19 +68,24 @@ The commands are executed by [execa](https://www.npmjs.com/package/execa).
 // doitfile.js
 
 // bash helper
+// how about making the command more friendly?
 const useBash = (cli, context = []) => new Proxy({}, {
   get: (_, command) => (...args) => [cli, [...context, command, ...args]]
 })
 
+
 const git = useBash('git')
-// this helper lets you do something more friendly like
-// git.commit('-m', '-a', 'message')
+const composer = useBash('docker-compose',  [
+  '-f', '../docker-compose.yml',
+  '--project-directory', '../project-x/y'
+])
+
 
 module.expors = ({ params }) => ({
     tasks: [
       {
         key: 'wip'
-        title: '📋 Send work in progress',
+        title: 'Send work in progress',
         commands: [
           git.status(),                       // useBash
           ['echo', [':: commit ::']],         // array 
@@ -93,7 +98,18 @@ module.expors = ({ params }) => ({
         ]
       },
       {
-        ...
+        key: 'db',
+        title: 'Data base',
+        commands: [
+          composer.up('-d',  'mongodb')
+        ]
+      },
+      {
+        key: 'up',
+        title: 'Up container',
+        commands: [
+          composer.up('-d',  params.c)
+        ]
       }
     ]
 })
