@@ -79,6 +79,7 @@ const composer = useBash('docker-compose',  [
   '-f', '../docker-compose.yml',
   '--project-directory', '../project-x/y'
 ])
+const doit = useBash('doit')
 
 
 module.expors = ({ params }) => ({
@@ -109,6 +110,14 @@ module.expors = ({ params }) => ({
         title: 'Up container',
         commands: [
           composer.up('-d',  params.c)
+        ]
+      },
+      {
+        key: 'project:x',
+        title: 'Start project xxx',
+        commands: [
+          doit.task('db'),
+          doit.task('up', 'xxx'),
         ]
       }
     ]
