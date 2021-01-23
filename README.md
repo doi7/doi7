@@ -1,10 +1,10 @@
 # DoIt cli
 
+DoIt cli is a task automation tool, it allows you to use the power of the java script to perform repetitive tasks asks in your workflow. It is still a work in progress.
+
 - Automates tasks;
 - Generates favicons;
 - Generates changelog;
-
-DoIt cli is a task automation tool, it allows you to use the power of the java script to perform repetitive tasks asks in your workflow. It is still a work in progress, so we will still have many improvements.
 
 #### Install
 
