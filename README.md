@@ -76,8 +76,8 @@ Usage:
 
 ```bash
 # Choose a task
-$ doit task -m "just an example"
+$ doit task
 
 # or just exec the task
-$ doit task wip
+$ doit task wip -m "just an example"
 ```
