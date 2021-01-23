@@ -39,7 +39,7 @@ or you can run using the command npx: `npx doit task`.
 
 #### Tasks
 
-- `key`: allows you to run the task from the command line.
+- `key`: identifies the task to be run.
    `doit task <key>`
 - `title`: task title, it will be visible in the task list.
    `doit task`
