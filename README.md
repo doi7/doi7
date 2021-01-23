@@ -73,6 +73,8 @@ const useBash = (cli, context = []) => new Proxy({}, {
 })
 
 const git = useBash('git')
+// this helper lets you do something more friendly like
+// git.commit('-m', '-a', 'message')
 
 module.expors = ({ params }) => ({
     tasks: [
