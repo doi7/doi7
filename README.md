@@ -19,7 +19,9 @@ Create a `doitfile.js` or `doitfile.json`.
 ```js
 module.exports = ({ params }) => {
   return {
-    tasks: [...]
+    tasks: [
+      { key: 'foo', title: 'Foo', commands: ['Hello cli']}
+    ]
   }
 }
 
