@@ -9,7 +9,7 @@ DoIt cli is a task automation tool, it allows you to use the power of the java s
 #### Install
 
 ```bash
-$ yarn add @do-it/cli
+$ npm i -g @do-it/cli
 ```
 
 #### Usage
