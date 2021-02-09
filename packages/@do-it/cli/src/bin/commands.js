@@ -6,7 +6,10 @@ const parseArgs = require('minimist')
 
 const cli = new Liftoff({
   name: 'doit',
-  extensions: interpret.jsVariants,
+  extensions: {
+    '.js': null,
+    '.json': null
+  },
   v8flags
 })
 
