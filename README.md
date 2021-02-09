@@ -33,7 +33,7 @@ The cli
 $ doit --help
 ```
 
-or you can run using the command npx: `npx doit task`.
+or you can run using the command npx: `npx @do-it/cli task`.
 
 ### API
 
