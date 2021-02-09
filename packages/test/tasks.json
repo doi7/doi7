@@ -5,7 +5,7 @@
       "title": "Hello doit",
       "commands": [
         "echo 'Hello doit!'"
-      }
+      ]
     }
   ]
 }
