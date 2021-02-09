@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/anteriovieira/doit/compare/v0.8.2...v0.9.0) (2021-02-09)
+
+
+### Features
+
+* **core/task:** supports commands as string ([9988c64](https://github.com/anteriovieira/doit/commit/9988c647f72b8407711ba54bc8c3fb4828bdf248))
+
+
+
+
+
 ## [0.2.6](https://github.com/anteriovieira/doit/compare/v0.2.5...v0.2.6) (2020-04-21)
 
 **Note:** Version bump only for package @do-it/utils
