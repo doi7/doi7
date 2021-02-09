@@ -4,7 +4,7 @@
       "key": "hello:doit",
       "title": "Hello doit",
       "commands": [
-        "echo 'Hello doit!'"
+        "pwd"
       ]
     }
   ]
