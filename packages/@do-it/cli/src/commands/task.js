@@ -34,7 +34,11 @@ module.exports = async (params, config, env) => {
       task = tasks.find(task => task.key === params.command)
     }
 
-    log('\n', chalk.cyanBright(task.title || 'Task'))
+    if (!task) {
+      throw new Error(`Task ${chalk.yellow(params.command)} not found!`)
+    }
+
+    log('\n', chalk.cyanBright(task.title || 'Task'), '\n')
 
     await sequence((task && task.commands) || [], async command => {
       let terms = (isFunction(command) 
@@ -54,11 +58,11 @@ module.exports = async (params, config, env) => {
       if (params.verbose) {
         log('\n', chalk.gray(`$ ${flattenDepth(terms).join(' ')}`), '\n')
       }
-
+      // remove error Command failed with exit code 1
       return execa.apply(execa, (terms.push(output), terms))
     })
   } catch (err) {
-    log('\n', chalk.gray(`$ ${err.command}`))
-    log('\n', chalk.red(err.message))
+    log('\t\n', chalk.redBright('Command failed!'), '\n')
+    log('\t\n', err.message, '\n')
   }
 }
