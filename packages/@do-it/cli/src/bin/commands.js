@@ -36,6 +36,7 @@ program
   .option('-c, --commit', 'commit changes')
   .option('-p, --push', 'push new version for github')
   .option('-v, --verbose', 'show the output of command processing')
+  .option('-s, --skip-ci', 'skip the automated deployment by adding [skip ci]')
   .option('-D, --docker <source>', 'push a new tag to docker repository')
   .action(cmd => loadCommand('release', cleanArgs(cmd)))
 

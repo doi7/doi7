@@ -19,6 +19,18 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Release (Skip CI)",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "console": "integratedTerminal",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
+      "cwd": "${workspaceFolder}",
+      "args": ["release", "-cs"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Release (With docker)",
       "skipFiles": [
         "<node_internals>/**"
