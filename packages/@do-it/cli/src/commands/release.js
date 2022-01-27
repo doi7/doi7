@@ -89,7 +89,7 @@ module.exports = async (params, config) => {
       if (params.commit) {
         await commands(`Committing version`, [
           x => execa('git', ['add', '-A'], params.verbose && { stdio: 'inherit' }),
-          x => execa('git', ['commit', '-m', `chore(changelog): release ${version} ${params.skipCi ? '[skip ci]' : ''}`], params.verbose && { stdio: 'inherit' })
+          x => execa('git', ['commit', '-m', `chore(changelog): release v${version} ${params.skipCi ? '[skip ci]' : ''}`], params.verbose && { stdio: 'inherit' })
         ])
       }
 
