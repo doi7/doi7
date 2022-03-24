@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const execa = require('execa')
+const Table = require('cli-table3')
 const deepmerge = require('deepmerge')
 const inquirer = require('inquirer')
 const flattenDepth = require('lodash.flattendepth')
@@ -7,6 +8,33 @@ const { sequence, isFunction, isString } = require('@do-it/utils')
 
 const defaultConfig = {
   tasks: []
+}
+
+const listAsTable = (tasks) => {
+  const leftMargin = '    ';
+  const tableConfig = {
+    head: ['Name', 'Title', 'Description'],
+    chars: {
+      'left': leftMargin.concat('│'),
+      'top-left': leftMargin.concat('┌'),
+      'bottom-left': leftMargin.concat('└'),
+      'mid': '',
+      'left-mid': '',
+      'mid-mid': '',
+      'right-mid': '',
+    },
+  };
+  const table = new Table(tableConfig);
+
+  tasks.forEach(task => {
+    table.push([
+      chalk.green(task.key),
+      chalk.cyan(task.title),
+      chalk.gray(task.description || ''),
+    ]);
+  });
+
+  return table.toString();
 }
 
 module.exports = async (params, config, env) => {
@@ -20,6 +48,12 @@ module.exports = async (params, config, env) => {
   ))
 
   try {
+    if (params.list) {
+      console.log(listAsTable(tasks))
+      return
+    }
+
+
     if (!params.command) {
       const { selectedTask } = await inquirer.prompt([
         {

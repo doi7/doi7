@@ -45,6 +45,7 @@ program
   .alias('tasks')
   .allowUnknownOption()
   .description('Tasks')
+  .option('-l, --list', 'list all tasks')
   .option('-v, --verbose', 'show the output of command processing')
   .action(cmd => loadCommand('task', cleanArgs(cmd)))
 

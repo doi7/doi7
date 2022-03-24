@@ -67,6 +67,18 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Task (List)",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "console": "integratedTerminal",
+      "program": "${workspaceFolder}/packages/@do-it/cli/src/bin/doit.js",
+      "cwd": "${workspaceFolder}/packages/test",
+      "args": ["task", "--list"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Task <task>",
       "skipFiles": [
         "<node_internals>/**"
