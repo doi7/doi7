@@ -10,6 +10,7 @@ const defaultConfig = {
   tasks: []
 }
 
+// show the list of tasks as table
 const listAsTable = (tasks) => {
   const leftMargin = '    ';
   const tableConfig = {
