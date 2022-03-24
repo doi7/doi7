@@ -18,7 +18,7 @@
     "doit": "src/bin/doit.js"
   },
   "dependencies": {
-    "@do-it/utils": "^0.10.0",
+    "@do-it/utils": "^0.9.0",
     "chalk": "^3.0.0",
     "cli-table3": "^0.6.1",
     "cliui": "^6.0.0",
