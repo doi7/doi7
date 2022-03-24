@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/only-doit/doit/compare/v0.9.3...v0.10.0) (2022-03-24)
+
+
+### Features
+
+* **tasks:** implements list param to show the commands list ([f567aaa](https://github.com/only-doit/doit/commit/f567aaa521c3b9be778dd9f833c400d38bb0ec6d))
+
+
+
+
+
 ## [0.9.3](https://github.com/only-doit/doit/compare/v0.9.2...v0.9.3) (2022-01-27)
 
 **Note:** Version bump only for package doit
