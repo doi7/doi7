@@ -4,7 +4,7 @@ const Table = require('cli-table3')
 const deepmerge = require('deepmerge')
 const inquirer = require('inquirer')
 const flattenDepth = require('lodash.flattendepth')
-const { sequence, isFunction, isString } = require('@do-it/utils')
+const { sequence, isFunction, isString, useBash } = require('@do-it/utils')
 
 const defaultConfig = {
   tasks: []
@@ -77,7 +77,7 @@ module.exports = async (params, config, env) => {
 
     await sequence((task && task.commands) || [], async command => {
       let terms = (isFunction(command) 
-        ? await command({ execa, inquirer, task, params, config, env, output })
+        ? await command({ execa, inquirer, task, params, config, env, output, useBash, chalk })
         : command) || []
 
       if (isString(terms)) {
