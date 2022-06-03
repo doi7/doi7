@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/only-doit/doit/compare/v0.10.3...v0.10.4) (2022-06-03)
+
+**Note:** Version bump only for package doit
+
+
+
+
+
 ## [0.10.1](https://github.com/only-doit/doit/compare/v0.10.0...v0.10.1) (2022-03-24)
 
 **Note:** Version bump only for package doit
