@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/anteriovieira/doit/compare/v0.10.4...v0.11.0) (2022-07-12)
+
+**Note:** Version bump only for package @doi7/utils
+
+
+
+
+
 # [0.10.0](https://github.com/anteriovieira/doit/compare/v0.9.3...v0.10.0) (2022-03-24)
 
 **Note:** Version bump only for package @doi7/utils
