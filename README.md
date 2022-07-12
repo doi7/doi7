@@ -9,7 +9,7 @@ DoIt cli is a task automation tool, it allows you to use the power of the java s
 #### Install
 
 ```bash
-$ npm i -g @do-it/cli
+$ npm i -g @doi7/cli
 ```
 
 #### Usage
@@ -33,7 +33,7 @@ The cli
 $ doit --help
 ```
 
-or you can run using the command npx: `npx @do-it/cli task`.
+or you can run using the command npx: `npx @doi7/cli task`.
 
 ### API
 

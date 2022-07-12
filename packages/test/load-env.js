@@ -1,4 +1,4 @@
-require('../@do-it/utils/src/index').loadEnv({
+require('../@doi7/utils/src/index').loadEnv({
     mode: 'production',
     context: __dirname,
     local: true

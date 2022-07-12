@@ -22,8 +22,8 @@
     "strictNullChecks": false,
   },
   "include": [
-    "packages/@do-it/*/src/**/*",
-    "packages/@do-it/*/types/**/*"
+    "packages/@doi7/*/src/**/*",
+    "packages/@doi7/*/types/**/*"
   ],
   "exclude": [
     "node_modules"

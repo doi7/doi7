@@ -1,4 +1,4 @@
-const { useBash } = require('../@do-it/utils')
+const { useBash } = require('../@doi7/utils')
 
 const git = useBash('git')
 const npx = useBash('npx')

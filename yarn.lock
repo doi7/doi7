@@ -38,9 +38,9 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@do-it/utils@^0.9.0":
+"@doi7/utils@^0.9.0":
   version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@do-it/utils/-/utils-0.9.0.tgz#40c654b00883df480106102f9852eeb4af050779"
+  resolved "https://registry.yarnpkg.com/@doi7/utils/-/utils-0.9.0.tgz#40c654b00883df480106102f9852eeb4af050779"
   integrity sha512-66W/67LXmRxOep16u/Bdol2qFcUOuvhNGvwRsbHnB1HmhHTKvhM8w4hzx4UXXf9UdOgmcx/BViDdHehTtTiJgg==
   dependencies:
     "@anteriovieira/conventional-changelog" "^0.0.1"

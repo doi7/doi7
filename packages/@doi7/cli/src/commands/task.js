@@ -4,7 +4,7 @@ const Table = require('cli-table3')
 const deepmerge = require('deepmerge')
 const inquirer = require('inquirer')
 const flattenDepth = require('lodash.flattendepth')
-const { sequence, isFunction, isString, useBash, notify } = require('@do-it/utils')
+const { sequence, isFunction, isString, useBash, notify } = require('@doi7/utils')
 
 const defaultConfig = {
   tasks: []
