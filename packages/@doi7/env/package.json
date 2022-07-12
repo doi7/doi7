@@ -4,14 +4,17 @@
   "author": "Antério Vieira <anteriovieira@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/anteriovieira/doit.git"
+    "url": "ssh://git@github.com/doi7/doi7.git"
   },
-  "version": "0.11.5",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.2",
   "main": "lib/index.js",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0"
   },
-  "gitHead": "08d078585bf63793affcd790ceb4c43c94a9de89"
+  "gitHead": "aa1fcdb24301dde2cf1ee609a2e36cb44b25dba9"
 }

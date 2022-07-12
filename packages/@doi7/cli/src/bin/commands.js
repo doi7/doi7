@@ -1,7 +1,6 @@
 const program = require('commander')
 const Liftoff = require('liftoff')
 const v8flags = require('v8flags')
-const interpret = require('interpret')
 const parseArgs = require('minimist')
 
 const cli = new Liftoff({

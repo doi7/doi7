@@ -6,7 +6,6 @@ module.exports = {
   isFunction,
   isString,
   chalk: require('chalk'),
-  loadEnv: require('./lib/load-env'),
   sequence: require('./lib/sequence'),
   logger: require('./lib/logger'),
   notify: require('./lib/notify'),

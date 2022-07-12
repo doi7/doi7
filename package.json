@@ -4,14 +4,17 @@
     "build": "lerna run build --scope '@doi7/*'",
     "dev": "lerna run build --parallel -- --watch",
     "lint": "eslint .",
-    "release": "lerna publish --conventional-commits && conventional-github-releaser --preset angular",
-    "release-only": "lerna publish --yes",
-    "ci": "yarn build && yarn lint"
+    "release-log": "lerna publish --conventional-commits && conventional-github-releaser --preset angular",
+    "release-auto": "lerna publish --yes",
+    "release": "lerna publish --yes from-package",
+    "ci": "yarn build && yarn lint",
+    "launch": "git add . && git commit --amend --no-edit && git push --force && yarn release"
   },
   "workspaces": [
     "packages/@doi7/*",
     "packages/test/*"
   ],
+  "packageManager": "yarn@1.22.11",
   "devDependencies": {
     "@anteriovieira/conventional-changelog": "^0.0.1",
     "conventional-changelog": "^3.1.15",

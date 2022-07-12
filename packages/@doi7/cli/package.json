@@ -1,11 +1,11 @@
 {
   "name": "@doi7/cli",
-  "version": "0.11.5",
-  "main": "index.js",
+  "version": "0.0.9",
+  "main": "src/bin/doit.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/anteriovieira/doit.git"
+    "url": "ssh://git@github.com/doi7/doi7.git"
   },
   "author": {
     "name": "Antério Vieira da Silva",
@@ -15,32 +15,29 @@
     "node": ">=8.12"
   },
   "bin": {
-    "doit": "src/bin/doit.js"
+    "doit": "src/bin/doit.js",
+    "doi7": "src/bin/doit.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
-    "@doi7/utils": "^0.9.0",
+    "@doi7/utils": "^0.0.2",
     "chalk": "^3.0.0",
     "cli-table3": "^0.6.1",
-    "cliui": "^6.0.0",
-    "cmd-shim": "^3.0.3",
     "commander": "^4.0.1",
     "deepmerge": "^4.2.2",
-    "download-git-repo": "^3.0.2",
     "execa": "^3.4.0",
     "extra": "^0.2.1",
     "favicons": "^5.5.0",
-    "fs": "^0.0.1-security",
     "inquirer": "^7.0.0",
-    "interpret": "^2.0.0",
     "liftoff": "^3.1.0",
-    "lodash.clonedeep": "^4.5.0",
     "lodash.flattendepth": "^4.7.0",
     "minimist": "^1.2.5",
     "node-notifier": "^6.0.0",
     "ora": "^4.0.3",
     "semver": "^6.3.0",
-    "table": "^5.4.6",
     "v8flags": "^3.1.3"
   },
-  "gitHead": "08d078585bf63793affcd790ceb4c43c94a9de89"
+  "gitHead": "aa1fcdb24301dde2cf1ee609a2e36cb44b25dba9"
 }
