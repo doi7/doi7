@@ -1,10 +1,6 @@
-# DoIt cli
+# Doi7
 
-DoIt cli is a task automation tool, it allows you to use the power of the java script to perform repetitive tasks asks in your workflow. It is still a work in progress.
-
-- Automates tasks;
-- Generates favicons;
-- Generates changelog;
+Doi7 is a task automation tool, it allows you to use the power of the JavaScript performing repetitive tasks in your workflow.
 
 #### Install
 
