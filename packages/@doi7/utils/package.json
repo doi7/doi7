@@ -6,7 +6,7 @@
     "type": "git",
     "url": "ssh://git@github.com/anteriovieira/doit.git"
   },
-  "version": "0.11.2",
+  "version": "0.11.3",
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {

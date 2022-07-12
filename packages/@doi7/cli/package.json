@@ -1,6 +1,6 @@
 {
   "name": "@doi7/cli",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "main": "index.js",
   "license": "MIT",
   "repository": {
