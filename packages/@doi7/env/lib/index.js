@@ -29,5 +29,6 @@ module.exports = ({mode = null, context = '.', local = true} = {}) => {
   if (local) load(localModePath)
   if (modePath) load(modePath)
   if (local) load(localPath)
+  
   load(basePath)
 }

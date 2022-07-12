@@ -12,5 +12,6 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0"
-  }
+  },
+  "gitHead": "7f943017799c623b418e89b48cc78a0dd3ac9fae"
 }
